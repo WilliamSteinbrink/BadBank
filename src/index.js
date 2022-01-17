@@ -4,6 +4,7 @@ import { Routes, Route, Link, HashRouter } from 'react-router-dom';
 import Home from './home';
 import About from './about';
 import Products from './products';
+import Nav from './nav';
 
 export const UserContext = createContext(null);
 
@@ -21,6 +22,7 @@ function Spa() {
             <Route path="/" element={<Home />} />
             <Route path="/about/" element={<About />} />
             <Route path="/products/" element={<Products />} />
+            <Route path="/nav/" element={<Nav />} />
           </Routes>
         </UserContext.Provider>
       </div>
