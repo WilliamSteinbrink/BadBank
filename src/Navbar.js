@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import bootstrap from 'bootstrap';
 
-function Nav() {
+function Navbar() {
     return (
         <div>
             <ul className="nav nav-tabs nav-justified">
@@ -31,4 +31,4 @@ function Nav() {
     );
 }
 
-export default Nav;
+export default Navbar;

@@ -5,7 +5,7 @@ import { Routes, Route, HashRouter } from 'react-router-dom';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle'
-import Nav from './nav';
+import Navbar from './Navbar';
 import CreateAccount from './components/CreateAccount';
 import Login from './components/Login';
 import Deposit from './components/Deposit';
@@ -13,18 +13,16 @@ import Withdraw from './components/Withdraw';
 import AllData from './components/AllData';
 import Balance from './components/Balance';
 import Home from './components/Home';
+import { UserContext } from './context';
 import './index.css';
-
-export const UserContext = createContext(null);
 
 function Spa() {
   return (
     <HashRouter>
       <div>
-        <h1>Routing - Hello World</h1>
-        <Nav />
+        <Navbar />
         <br/>
-        <UserContext.Provider value={{users:['peter']}}>
+        <UserContext.Provider value={{users: [{name: 'abel', email: 'abel@mit.edu', password: 'secret', balance: 100}]}}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login/" element={<Login />} />
