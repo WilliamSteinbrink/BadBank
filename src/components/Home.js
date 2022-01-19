@@ -1,14 +1,16 @@
-import { React, useContext } from 'react';
-import { UserContext } from '../context'
+import { React } from 'react';
+import { Card } from '../context'
+
 
 const Home = () => {
-    const ctx = useContext(UserContext);
     return (
-        <div>
-            <h3>Home Component<br/>
-                {JSON.stringify(ctx)}
-            </h3>
-        </div>
+        <Card 
+            txtcolor="black"
+            header="BadBank Landing Page"
+            title="Welcome to the bank"
+            text="You can use this bank"
+            body={(<img src="./bank.png" className="img-fluid" alt="Responsive image" />)}
+        />
     );
 }
 
