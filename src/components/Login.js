@@ -1,8 +1,12 @@
+import { React, useContext } from 'react';
+import { UserContext } from '../context';
+
 function Login() {
+    const ctx = useContext(UserContext);
     return (
         <div>
             <h3>Login Component</h3>
-                <p>Where you learn about us</p>
+                {JSON.stringify(ctx)}
         </div>
     );
 }
