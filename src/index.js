@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import $ from 'jquery';
 import Popper from 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle'
 import Navbar from './Navbar';
 import CreateAccount from './components/CreateAccount';
 import Login from './components/Login';
@@ -40,5 +39,3 @@ function Spa() {
 }
 
 ReactDOM.render(<Spa />, document.getElementById('root'));
-
-{/* <Route path="expenses" element={<Expenses />} /> */}

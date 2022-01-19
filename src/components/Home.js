@@ -4,7 +4,8 @@ import { Card } from '../context'
 
 const Home = () => {
     return (
-        <Card 
+        <Card
+            bgcolor="light"
             txtcolor="black"
             header="BadBank Landing Page"
             title="Welcome to the bank"

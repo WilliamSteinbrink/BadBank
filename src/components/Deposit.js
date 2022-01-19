@@ -1,14 +1,15 @@
 import { React, useContext } from 'react';
-import { UserContext } from '../context'
+import { UserContext, Card } from '../context'
 
 function Deposit() {
-    const ctx = useContext(UserContext);
     return (
-        <div>
-            <h3>Deposit</h3>
-                <p>Deposit my product!</p>
-                {JSON.stringify(ctx)}
-        </div>
+        <Card
+            bgcolor="light"
+            txtcolor="black"
+            header="Deposit"
+            title="Make A Deposit"
+            text="Here is where you deposit money"
+        />
     );
 }
 

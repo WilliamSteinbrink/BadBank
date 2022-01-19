@@ -1,14 +1,15 @@
 import { React, useContext } from 'react';
-import { UserContext } from '../context';
+import { UserContext, Card } from '../context';
 
 const Balance = () => {
-    const ctx = useContext(UserContext);
     return (
-        <div>
-            <h3>Balance Component</h3>
-            <p>This is your sad balance</p>
-            {JSON.stringify(ctx)}
-        </div>
+        <Card
+            bgcolor="light"
+            txtcolor="black"
+            header="Badbank Account Balance"
+            title="Account Balance"
+            text="This is where your balance goes"
+        />
     );
 }
 

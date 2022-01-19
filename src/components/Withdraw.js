@@ -1,13 +1,15 @@
 import { React, useContext } from 'react';
-import { UserContext } from '../context';
+import { UserContext, Card } from '../context';
 
 const Withdraw = () => {
-    const ctx = useContext(UserContext);
     return (
-        <div>
-            <h3>Withdraw Component</h3>
-            {JSON.stringify(ctx)}
-        </div>
+        <Card
+            bgcolor="light"
+            txtcolor="black"
+            header="Withdraw"
+            title="Withdraw From An Account"
+            text="Withdraw your moolah"
+        />
     );
 }
 
