@@ -1,5 +1,5 @@
 import { React, createContext } from 'react';
-import { Route, Link, HashRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function Card(props) {
     function classes() {

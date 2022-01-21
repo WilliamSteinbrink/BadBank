@@ -12,3 +12,22 @@ code {
     monospace;
 }
 
+.navbar {
+  background-color: #e3f2fd;
+
+}
+
+.navbar-brand:hover {
+  border-radius: 5px;
+  background:#0ea9e2;
+}
+.nav-link:hover {
+  border-radius: 5px;
+  background:#0ea9e2;
+}
+
+.btn:hover {
+  background:#0ea9e2;
+}
+
+

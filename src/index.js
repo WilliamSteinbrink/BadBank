@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.css'
-import { React, createContext } from 'react';
+import { React } from 'react';
 import ReactDOM from 'react-dom';
 import { Routes, Route, HashRouter } from 'react-router-dom';
 import $ from 'jquery';
@@ -11,7 +11,7 @@ import Deposit from './components/Deposit';
 import Withdraw from './components/Withdraw';
 import AllData from './components/AllData';
 import Balance from './components/Balance';
-import Home from './components/Home';
+import Home from './Home';
 import { UserContext } from './context';
 import './index.css';
 
