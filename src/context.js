@@ -15,6 +15,8 @@ export function Card(props) {
                 {props.text && (<p className="card-text">{props.text}</p>)}
                 {props.body}
                 {props.status && (<div id='createStatus'>{props.status}</div>)}
+                {props.link1 && <Link className="btn btn-light border-dark" style={{marginBottom: "5px"}} to={props.link1}>{props.name1}</Link>}
+                {props.link2 && <Link className="btn btn-light border-dark" to={props.link2}>{props.name2}</Link>}
             </div>
         </div>
     )
