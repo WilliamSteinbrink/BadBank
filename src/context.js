@@ -5,7 +5,7 @@ export function Card(props) {
     function classes() {
         const bg = props.bgcolor ? ' bg-' + props.bgcolor: ' ';
         const txt = props.txtcolor ? ' text-' + props.txtcolor: ' text-white';
-        return 'card mb-3 ' + bg + txt;
+        return 'card mb-3 text-center ' + bg + txt;
     }
     return (
         <div className={classes()} style={{maxWidth: '18rem'}}>
@@ -15,8 +15,8 @@ export function Card(props) {
                 {props.text && (<p className="card-text">{props.text}</p>)}
                 {props.body}
                 {props.status && (<div id='createStatus'>{props.status}</div>)}
-                {props.link1 && <Link className="btn btn-light border-dark" style={{marginBottom: "5px"}} to={props.link1}>{props.name1}</Link>}
-                {props.link2 && <Link className="btn btn-light border-dark" to={props.link2}>{props.name2}</Link>}
+                {props.link1 && <Link className="btn btn-light border-dark w-100" style={{marginBottom: "5px"}} to={props.link1}>{props.name1}</Link>}
+                {props.link2 && <Link className="btn btn-light border-dark w-100" to={props.link2}>{props.name2}</Link>}
             </div>
         </div>
     )

@@ -46,14 +46,14 @@ function Deposit() {
                 <>
                 Amount<br/>
                 <input type="input" className="form-control" id="amount" placeholder="Enter Amount" value={amount} onChange={e => setAmount(e.currentTarget.value)} /><br/>
-                <button type="submit" className="btn btn-light border-dark" onClick={handleDeposit}>Make a Deposit</button>
+                <button type="submit" className="btn btn-light border-dark w-100" onClick={handleDeposit}>Make a Deposit</button>
                 </>
             ):(
                 <>
                     <h5>Success!</h5>
                     <div>You have deposited ${amount} to your account.</div>
                     <div>Your new balance is ${ctx.users[0].balance}.</div>
-                    <button type="submit" className="btn btn-light border-dark" onClick={clearForm}>Make Another Deposit</button>
+                    <button type="submit" className="btn btn-light border-dark w-100" onClick={clearForm}>Make Another Deposit</button>
                 </>
             )}
             title="Deposit To Your Account"

@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.is-active {
+  background: red;
+}
+
 .navbar {
   background-color: #e3f2fd;
 
@@ -21,6 +25,7 @@ code {
   border-radius: 5px;
   background:#0ea9e2;
 }
+
 .nav-link:hover {
   border-radius: 5px;
   background:#0ea9e2;

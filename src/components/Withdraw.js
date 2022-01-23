@@ -50,14 +50,14 @@ function Withdraw() {
                 <>
                 Amount<br/>
                 <input type="input" className="form-control" id="amount" placeholder="Enter Amount" value={amount} onChange={e => setAmount(e.currentTarget.value)} /><br/>
-                <button type="submit" className="btn btn-light border-dark" onClick={handleWithdraw}>Make a Withdrawal</button>
+                <button type="submit" className="btn btn-light border-dark w-100" onClick={handleWithdraw}>Make a Withdrawal</button>
                 </>
             ):(
                 <>
                     <h5>Success!</h5>
                     <div>You have withdrawn ${amount} from your account.</div>
                     <div>Your new balance is ${ctx.users[0].balance}.</div>
-                    <button type="submit" disabled={!amount} className="btn btn-light border-dark" onClick={clearForm}>Make Another Withdrawal</button>
+                    <button type="submit" disabled={!amount} className="btn btn-light border-dark w-100" onClick={clearForm}>Make Another Withdrawal</button>
                 </>
             )}
             title="Withdraw From Your Account"

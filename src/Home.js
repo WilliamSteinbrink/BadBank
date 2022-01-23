@@ -1,7 +1,7 @@
 import { React } from 'react';
 import { Card } from './context'
 
-export default function Home() {
+export default function Home(props) {
     return (
         <Card
             bgcolor="light"
@@ -9,7 +9,7 @@ export default function Home() {
             header="BadBank"
             title="Welcome to BadBank"
             text="Where nothing is secure."
-            body={(<img src="./bank.png" className="img-fluid" alt="Responsive image" />)}
+            body={(<img src={props.bank} className="img-fluid" alt="Responsive image" />)}
         />
     );
 }

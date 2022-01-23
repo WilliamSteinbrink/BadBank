@@ -11,6 +11,7 @@ import Deposit from './components/Deposit';
 import Withdraw from './components/Withdraw';
 import AllData from './components/AllData';
 import Balance from './components/Balance';
+import bank from './bank.png';
 import Home from './Home';
 import { UserContext } from './context';
 import './index.css';
@@ -23,7 +24,7 @@ function Spa() {
         <br/>
         <UserContext.Provider value={{users: [{name: 'abel', email: 'abel@mit.edu', password: 'secret', balance: 100}]}}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home bank={bank}/>} />
             <Route path="/login/" element={<Login />} />
             <Route path="/balance/" element={<Balance />} />
             <Route path="/deposit/" element={<Deposit />} />
