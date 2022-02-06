@@ -10,6 +10,11 @@ function CreateAccount() {
     const ctx = useContext(UserContext);
 
     function validate(field, label) {
+        if (field === password && password.length < 8) {
+            setStatus('Error: Password must be 8 characters or more.');
+            setTimeout(() => setStatus(''), 3000);
+            return false;
+        }
         if (!field) {
             setStatus('Error: ' + label);
             setTimeout(() => setStatus(''), 3000);
@@ -20,9 +25,9 @@ function CreateAccount() {
     
     function handleCreate() {
         console.log(name, email, password);
-        if (!validate(name, 'name')) return;
-        if (!validate(email, 'email')) return;
-        if (!validate(password, 'password')) return;
+        if (!validate(name, 'Please enter a name')) return;
+        if (!validate(email, 'Please enter an email address')) return;
+        if (!validate(password, 'Please enter a valid password')) return;
         ctx.users.push({name, email, password, balance: 100});
         setShow(false);
     }
@@ -52,7 +57,7 @@ function CreateAccount() {
                 </>
             ):(
                 <>
-                    <h5>Success</h5>
+                    <h5>Success! Account created</h5>
                     <button type="submit" className="btn btn-light border-dark" onClick={clearForm}>Add another account</button>
                 </>
             )}

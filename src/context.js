@@ -5,12 +5,12 @@ export function Card(props) {
     function classes() {
         const bg = props.bgcolor ? ' bg-' + props.bgcolor: ' ';
         const txt = props.txtcolor ? ' text-' + props.txtcolor: ' text-white';
-        return 'card mb-3 text-center ' + bg + txt;
+        return 'card mb-3 text-center border-dark' + bg + txt;
     }
     return (
         <div className={classes()} style={{maxWidth: '18rem'}}>
-            <div className="card-header">{props.header}</div>
-            <div className="card-body">
+            <div className="card-header" style={{backgroundColor: 'rgb(161, 19, 19)', color: 'white'}}>{props.header}</div>
+            <div className="card-body" style={{backgroundColor: 'rgb(248, 202, 202)'}}>
                 {props.title && (<h5 className="card-title">{props.title}</h5>)}
                 {props.text && (<p className="card-text">{props.text}</p>)}
                 {props.body}

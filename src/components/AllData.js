@@ -8,8 +8,8 @@ const AllData = () => {
             bgcolor="light"
             txtcolor="black"
             header="Badbank AllData"
-            title="All Your Data"
-            text={JSON.stringify(ctx)}
+            title="Account Details"
+            text={JSON.stringify(ctx.users[0].name)}
         />
     );
 }
