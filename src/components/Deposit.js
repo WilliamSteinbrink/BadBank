@@ -4,20 +4,23 @@ import { UserContext, Card } from '../context'
 function Deposit() {
     const [ show, setShow ] = useState(true);
     const [ status, setStatus ] = useState('');
-    const [ amount, setAmount ] = useState(0);
+    const [ amount, setAmount ] = useState('');
     const ctx = useContext(UserContext);
 
     function validate(field) {
         if (!field) {
             setStatus('Error: enter a number');
+            alert('Error: enter a number');
             setTimeout(() => setStatus(''), 3000);
             return false;
         } else if (isNaN(amount)) {
             setStatus('Error: enter a valid number.');
+            alert('Error: enter a valid number.');
             setTimeout(() => setStatus(''), 3000);
             return false;
         } else if (amount <=0) {
             setStatus('Error: deposit must be positive.');
+            alert('Error: deposit must be positive.');
             setTimeout(() => setStatus(''), 3000);
             return false;
         }
@@ -46,7 +49,7 @@ function Deposit() {
                 <>
                 Amount<br/>
                 <input type="input" className="form-control" id="amount" placeholder="Enter Amount" value={amount} onChange={e => setAmount(e.currentTarget.value)} /><br/>
-                <button type="submit" className="btn btn-light border-dark w-100" onClick={handleDeposit}>Make a Deposit</button>
+                <button type="submit" disabled={!amount} className="btn btn-light border-dark w-100" onClick={handleDeposit}>Make a Deposit</button>
                 </>
             ):(
                 <>
@@ -57,7 +60,7 @@ function Deposit() {
                 </>
             )}
             title="Deposit To Your Account"
-            text={`Your current balance is: $${ctx.users[0].balance}.`}
+            text={ctx.users[0] ? `Your current balance is: $${ctx.users[0].balance}.` : 'Please log in or create an account.' }
         />
     );
 }

@@ -13,7 +13,7 @@ export default function Home(props) {
             link1="/login/"
             name1="Login to your account"
             link2="/createaccount/"
-            name2="New member? Create your account here"
+            name2="New member? Create an account"
         />
     );
 }

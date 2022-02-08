@@ -10,13 +10,15 @@ function CreateAccount() {
     const ctx = useContext(UserContext);
 
     function validate(field, label) {
-        if (field === password && password.length < 8) {
-            setStatus('Error: Password must be 8 characters or more.');
+        if (!field) {
+            setStatus('Error: ' + label);
+            alert('Error: ' + label)
             setTimeout(() => setStatus(''), 3000);
             return false;
         }
-        if (!field) {
-            setStatus('Error: ' + label);
+        if (field === password && password.length < 8) {
+            setStatus('Error: Password must be 8 characters or more.');
+            alert('Error: Password must be 8 characters or more.')
             setTimeout(() => setStatus(''), 3000);
             return false;
         }
@@ -28,7 +30,7 @@ function CreateAccount() {
         if (!validate(name, 'Please enter a name')) return;
         if (!validate(email, 'Please enter an email address')) return;
         if (!validate(password, 'Please enter a valid password')) return;
-        ctx.users.push({name, email, password, balance: 100});
+        ctx.users.push({name, email, password, balance: 0});
         setShow(false);
     }
     
@@ -53,7 +55,7 @@ function CreateAccount() {
                 <input type="input" className="form-control" id="email" placeholder="Enter Email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br/>
                 Password<br/>
                 <input type="input" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br/>
-                <button type="submit" className="btn btn-light border-dark" onClick={handleCreate}>Create Account</button>
+                <button type="submit" disabled={!name && !email && !password} className="btn btn-light border-dark" onClick={handleCreate}>Create Account</button>
                 </>
             ):(
                 <>

@@ -10,7 +10,7 @@ const Balance = () => {
             txtcolor="black"
             header="Badbank Account Balance"
             title="Account Balance"
-            text={`Your current balance is: $${ctx.users[0].balance}.`}
+            text={ctx.users[0] && `Your current balance is: $${ctx.users[0].balance}.`}
             link1="/deposit/"
             name1="Make a Deposit"
             link2="/withdraw/"
