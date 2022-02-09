@@ -38,31 +38,43 @@ function Deposit() {
         setAmount(0);
         setShow(true);
     }
-
-    return (
-        <Card
-            bgcolor="light"
-            txtcolor="black"
-            header="Deposit"
-            status={status}
-            body={show ? (
-                <>
-                Amount<br/>
-                <input type="input" className="form-control" id="amount" placeholder="Enter Amount" value={amount} onChange={e => setAmount(e.currentTarget.value)} /><br/>
-                <button type="submit" disabled={!amount} className="btn btn-light border-dark w-100" onClick={handleDeposit}>Make a Deposit</button>
-                </>
-            ):(
-                <>
-                    <h5>Success!</h5>
-                    <div>You have deposited ${amount} to your account.</div>
-                    <div>Your new balance is ${ctx.users[0].balance}.</div>
-                    <button type="submit" className="btn btn-light border-dark w-100" onClick={clearForm}>Make Another Deposit</button>
-                </>
-            )}
-            title="Deposit To Your Account"
-            text={ctx.users[0] ? `Your current balance is: $${ctx.users[0].balance}.` : 'Please log in or create an account.' }
-        />
-    );
-}
-
+    if (ctx.users[0]) {
+        return (
+            <Card
+                bgcolor="light"
+                txtcolor="black"
+                header="Deposit"
+                status={status}
+                body={show ? (
+                    <>
+                    Amount<br/>
+                    <input type="input" className="form-control" id="amount" placeholder="Enter Amount" value={amount} onChange={e => setAmount(e.currentTarget.value)} /><br/>
+                    <button type="submit" disabled={!amount} className="btn btn-light border-dark w-100" style={{maxWidth: '20rem'}} onClick={handleDeposit}>Make a Deposit</button>
+                    </>
+                ):(
+                    <>
+                        <h5>Success!</h5>
+                        <div>You have deposited ${amount} to your account.</div>
+                        <div>Your new balance is ${ctx.users[0].balance}.</div>
+                        <button type="submit" className="btn btn-light border-dark w-100" style={{maxWidth: '20rem'}} onClick={clearForm}>Make Another Deposit</button>
+                    </>
+                )}
+                title="Deposit To Your Account"
+                text={ctx.users[0] ? `Your current balance is: $${ctx.users[0].balance}.` : 'Please log in or create an account.' }
+            />
+        );
+    } else {
+        return (
+            <Card
+                bgcolor="light"
+                txtcolor="black"
+                header="BadBank Deposit"
+                title="Account Required"
+                text="You must create an account before making a deposit."
+                link1="/createaccount/"
+                name1="Click here to create your account"
+            />
+        )
+    }
+    }
 export default Deposit;

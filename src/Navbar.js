@@ -10,9 +10,12 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li className="nav-item active">
-                        <Link className="nav-link" to="/login/">Login</Link>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/createaccount/">Create Account</Link>
                     </li>
+                    {/* <li className="nav-item active">
+                        <Link className="nav-link" to="/login/">Login</Link>
+                    </li> */}
                     <li className="nav-item">
                         <Link className="nav-link" to="/balance/">Balance</Link>
                     </li>
@@ -24,9 +27,6 @@ function Navbar() {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/alldata/">All Data</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/createaccount/">Create Account</Link>
                     </li>
                 </ul>
                 </div>

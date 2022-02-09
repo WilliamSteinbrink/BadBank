@@ -9,13 +9,13 @@ function Login() {
     const ctx = useContext(UserContext);
 
     function verifyEmail(email) {
-        if (email === ctx.email) {
+        if (email === ctx.users[0].email) {
             setValidEmail(true);
         }
     }
 
     function verifyPassword(password) {
-        if (password === ctx.password) {
+        if (password === ctx.users[0].password) {
             setValidPassword(true);
         }
     }
@@ -34,9 +34,9 @@ function Login() {
             body={show ? (
                 <>
                 Email Address<br/>
-                <input type="input" className="form-control" id="email" placeholder="Enter Email" value={validEmail} onChange={verifyEmail(validEmail)} /><br/>
+                <input type="text" className="form-control" id="email" placeholder="Enter Email" value={validEmail} onChange={verifyEmail(validEmail)} /><br/>
                 Password<br/>
-                <input type="input" className="form-control" id="password" placeholder="Enter Password" value={validPassword} onChange={verifyPassword(validPassword)} /><br/>
+                <input type="password" className="form-control" id="password" placeholder="Enter Password" value={validPassword} onChange={verifyPassword(validPassword)} /><br/>
                 <button type="submit" className="btn btn-light border-dark" onClick={handleLogin}>Log In</button>
                 </>
             ):(

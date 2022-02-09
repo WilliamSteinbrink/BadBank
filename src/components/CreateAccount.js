@@ -64,7 +64,6 @@ function CreateAccount() {
                 </>
             )}
             title="Create An Account"
-            text="Create an account with us"
         />
     );
 }
