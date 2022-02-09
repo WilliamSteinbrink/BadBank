@@ -1,5 +1,6 @@
 import { UserContext, Card } from '../context';
 import { React, useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function CreateAccount() {
     const [ show, setShow ] = useState(true);
@@ -55,12 +56,17 @@ function CreateAccount() {
                 <input type="input" className="form-control" id="email" placeholder="Enter Email" value={email} onChange={e => setEmail(e.currentTarget.value)} /><br/>
                 Password<br/>
                 <input type="input" className="form-control" id="password" placeholder="Enter password" value={password} onChange={e => setPassword(e.currentTarget.value)} /><br/>
-                <button type="submit" disabled={!name && !email && !password} className="btn btn-light border-dark" onClick={handleCreate}>Create Account</button>
+                <button type="submit" disabled={!name && !email && !password} className="btn btn-light border-dark w-100" style={{maxWidth: '20rem'}} onClick={handleCreate}>Create Account</button>
                 </>
             ):(
                 <>
                     <h5>Success! Account created</h5>
-                    <button type="submit" className="btn btn-light border-dark" onClick={clearForm}>Add another account</button>
+                    <button type="submit" className="btn btn-light border-dark w-100" style={{maxWidth: '20rem', marginBottom: '5px'}} onClick={clearForm}>Add another account</button>
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <Link className="btn btn-light border-dark w-100" style={{maxWidth: '20rem', marginBottom: '5px'}} to="/deposit/">You've created your account, now make a deposit!</Link>
+                        </li>
+                    </ul>
                 </>
             )}
             title="Create An Account"
